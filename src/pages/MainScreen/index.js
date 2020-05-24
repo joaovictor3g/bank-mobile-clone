@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Camera } from 'expo-camera';
 
 import { 
@@ -14,6 +14,8 @@ export default function MainScreen() {
     const [hasPermission, setHasPermission] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.back);
     const [isCamera, setIsCamera] = useState(false);
+    const [techs, setTechs] = useState([]);
+
 
     useEffect(() => {
         (async () => {
@@ -53,7 +55,7 @@ export default function MainScreen() {
 
             <Text style={styles.myName}>Joaovictor</Text>
 
-            <TouchableOpacity style={styles.entrar}>
+            <TouchableOpacity style={styles.entrar} >
                 <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
 
